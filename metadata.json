@@ -1,0 +1,7 @@
+{
+  "name": "AuditFlow",
+  "description": "Automated Compliance Workflow for Medical Device Manufacturers. Turn operational activity into audit-ready evidence automatically.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
