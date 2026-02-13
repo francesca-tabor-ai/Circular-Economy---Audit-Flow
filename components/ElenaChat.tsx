@@ -77,9 +77,18 @@ const ElenaChat: React.FC<ElenaChatProps> = ({ initialContext }) => {
     setMessages(prev => [...prev, { role: 'user', content: messageToSend }]);
     setIsLoading(true);
 
-    const response = await getElenaResponse(messageToSend, { ...initialContext, view: currentView });
-    setMessages(prev => [...prev, { role: 'elena', content: response }]);
-    setIsLoading(false);
+    try {
+      const response = await getElenaResponse(messageToSend, { ...initialContext, view: currentView });
+      setMessages(prev => [...prev, { role: 'elena', content: response }]);
+    } catch (error: any) {
+      const errorMessage = error.message || 'Google API key is required to use this feature. Please set GEMINI_API_KEY in your .env.local file.';
+      setMessages(prev => [...prev, { 
+        role: 'elena', 
+        content: `I apologize, but I cannot process your request at this moment. ${errorMessage}` 
+      }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

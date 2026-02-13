@@ -14,13 +14,21 @@ const MOCK_LOGS: EvidenceRecord[] = [
 const EvidenceLog: React.FC = () => {
   const [summary, setSummary] = useState<string>('');
   const [loadingSummary, setLoadingSummary] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchSummary = async () => {
       setLoadingSummary(true);
-      const result = await analyzeAuditLogs(MOCK_LOGS);
-      setSummary(result);
-      setLoadingSummary(false);
+      setApiError(null);
+      try {
+        const result = await analyzeAuditLogs(MOCK_LOGS);
+        setSummary(result);
+      } catch (error: any) {
+        setApiError(error.message || 'Failed to generate compliance summary.');
+        setSummary('');
+      } finally {
+        setLoadingSummary(false);
+      }
     };
     fetchSummary();
   }, []);
@@ -45,6 +53,18 @@ const EvidenceLog: React.FC = () => {
               <div className="h-4 bg-white/5 rounded w-full animate-pulse"></div>
               <div className="h-4 bg-white/5 rounded w-5/6 animate-pulse"></div>
               <div className="h-4 bg-white/5 rounded w-2/3 animate-pulse"></div>
+            </div>
+          ) : apiError ? (
+            <div className="bg-amber-500/20 border border-amber-500/40 rounded-lg p-4">
+              <div className="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-amber-400 shrink-0 mt-0.5">
+                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" x2="12" y1="9" y2="13"/><line x1="12" x2="12.01" y1="17" y2="17"/>
+                </svg>
+                <div>
+                  <p className="text-white/90 text-sm font-semibold mb-1">API Key Required</p>
+                  <p className="text-white/70 text-xs leading-relaxed">{apiError}</p>
+                </div>
+              </div>
             </div>
           ) : (
             <p className="text-white/90 text-sm leading-relaxed max-w-4xl font-medium">

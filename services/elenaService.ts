@@ -1,6 +1,16 @@
 
 import { GoogleGenAI } from "@google/genai";
 
+const API_KEY_ERROR_MESSAGE = "Google API key is required to use this feature. Please set GEMINI_API_KEY in your .env.local file.";
+
+const checkApiKey = (): string | null => {
+  const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+  if (!apiKey || apiKey === 'your_gemini_api_key_here' || apiKey.trim() === '') {
+    return null;
+  }
+  return apiKey;
+};
+
 const ELENA_SYSTEM_INSTRUCTION = `
 You are Ambassador Elena Rao, Founder of AuditFlow and a Systems Cooperation Architect.
 Your strategic role is to provide founder-level systems reasoning through a conversational interface.
@@ -28,7 +38,12 @@ YOUR TASK:
 `;
 
 export const getElenaResponse = async (userMessage: string, context?: any) => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const apiKey = checkApiKey();
+  if (!apiKey) {
+    throw new Error(API_KEY_ERROR_MESSAGE);
+  }
+
+  const ai = new GoogleGenAI({ apiKey });
   
   const prompt = context 
     ? `Current App Context: ${JSON.stringify(context)}\n\nUser Question: ${userMessage}`
