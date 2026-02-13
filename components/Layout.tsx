@@ -68,7 +68,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab }) =>
             <div className="text-[10px] text-gray-500 uppercase font-semibold tracking-wider mb-2">Compliance Status</div>
             <div className="flex items-center gap-2.5">
               <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
-              <span className="text-xs font-medium text-gray-900">ISO-13485 Compliant</span>
+              <span className="text-xs font-medium text-gray-900">Circular Economy Compliant</span>
             </div>
           </div>
         </div>

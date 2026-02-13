@@ -23,7 +23,7 @@ const About: React.FC = () => {
       <section className="space-y-12">
         <div className="prose prose-slate max-w-none">
           <p className="text-lg text-[#4f566b] leading-relaxed">
-            In regulated manufacturing environments, teams don’t struggle because they don’t care about quality. They struggle because compliance evidence is still built manually — across spreadsheets, documents, emails, and disconnected systems. That creates stress, audit risk, and hidden operational cost.
+            In circular economy operations, teams don't struggle because they don't care about sustainability. They struggle because compliance evidence is still built manually — across spreadsheets, documents, emails, and disconnected systems. That creates stress, audit risk, and hidden operational cost.
           </p>
           <div className="h-px bg-slate-100 my-10"></div>
           <h2 className="text-2xl font-bold text-[#1a1f36] mb-6">What We Do</h2>
@@ -50,7 +50,7 @@ const About: React.FC = () => {
           <div className="space-y-4">
             <h3 className="text-sm font-bold uppercase tracking-widest text-slate-400">Who We Build For</h3>
             <p className="text-[14px] text-[#4f566b] leading-relaxed">
-              We focus on <span className="text-[#1a1f36] font-bold">medical device manufacturers</span> operating under ISO 13485, FDA QMS, or EU MDR who need to scale without scaling compliance headcount.
+              We focus on <span className="text-[#1a1f36] font-bold">circular economy operations</span> — waste management, resource recovery, circular supply chains, and sustainability-focused organizations who need to scale without scaling compliance headcount.
             </p>
           </div>
           <div className="space-y-4">
@@ -87,11 +87,11 @@ const About: React.FC = () => {
         <div className="bg-[#1a1f36] relative rounded-[23px] p-10 text-white space-y-6">
           <h2 className="text-2xl font-bold">The future of regulated industry</h2>
           <p className="text-white/70 leading-relaxed font-medium">
-            We believe the future is operational systems that are compliance-aware by design. Audits that verify systems, not paperwork. AuditFlow is building that future.
+            We believe the future is operational systems that are compliance-aware by design. Audits that verify circularity systems, not paperwork. AuditFlow is building that future.
           </p>
           <div className="pt-4">
              <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-2">Primary Focus</div>
-             <p className="text-lg font-bold text-white">Operational Audit Automation</p>
+             <p className="text-lg font-bold text-white">Circular Economy Audit Automation</p>
           </div>
         </div>
       </section>

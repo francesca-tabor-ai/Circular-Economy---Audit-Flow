@@ -55,7 +55,7 @@ const AuditPacks: React.FC = () => {
           <div className="space-y-2.5">
             <label className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.1em]">Inspection Frameworks</label>
             <div className="flex flex-wrap gap-2 pt-1">
-              {['ISO 13485', 'FDA 21 CFR', 'EU MDR'].map(f => (
+              {['Circular Economy Standards', 'Waste Management Compliance', 'Resource Recovery Frameworks'].map(f => (
                 <label key={f} className="flex items-center gap-2.5 bg-[#f8fafc] border border-slate-200 px-3 py-2 rounded-md cursor-pointer hover:bg-slate-100 transition-colors group">
                   <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-slate-300 text-[#635bff] focus:ring-[#635bff]" />
                   <span className="text-[11px] font-bold text-[#4f566b] group-hover:text-[#1a1f36]">{f}</span>

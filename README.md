@@ -6,11 +6,11 @@
 
 ## About
 
-We exist to remove compliance drag from regulated operations.
+We exist to remove compliance drag from circular economy operations.
 
 AuditFlow was built on a simple belief: Compliance should happen automatically when work happens — not as a second job after it.
 
-In regulated manufacturing environments, teams don't struggle because they don't care about quality. They struggle because compliance evidence is still built manually — across spreadsheets, documents, emails, and disconnected systems. That creates stress, audit risk, and hidden operational cost.
+In circular economy operations, teams don't struggle because they don't care about sustainability. They struggle because compliance evidence is still built manually — across spreadsheets, documents, emails, and disconnected systems. That creates stress, audit risk, and hidden operational cost.
 
 ### What We Do
 
@@ -22,7 +22,7 @@ AuditFlow turns normal operational activity into audit-ready evidence automatica
 
 ### Who We Build For
 
-We focus on medical device manufacturers operating under ISO 13485, FDA QMS, or EU MDR who need to scale without scaling compliance headcount.
+We focus on circular economy operations — waste management, resource recovery, circular supply chains, and sustainability-focused organizations who need to scale without scaling compliance headcount.
 
 ### Our Success Metric
 
@@ -42,11 +42,11 @@ Evidence should be generated automatically by the systems doing the work, not wr
 
 Audit readiness should be continuous and invisible, not a quarterly panic or a stay-late project.
 
-### The Future of Regulated Industry
+### The Future of Circular Economy Operations
 
-We believe the future is operational systems that are compliance-aware by design. Audits that verify systems, not paperwork. AuditFlow is building that future.
+We believe the future is operational systems that are compliance-aware by design. Audits that verify circularity systems, not paperwork. AuditFlow is building that future.
 
-**Primary Focus:** Operational Audit Automation
+**Primary Focus:** Circular Economy Audit Automation
 
 ---
 

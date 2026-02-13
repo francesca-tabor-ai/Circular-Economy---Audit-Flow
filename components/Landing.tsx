@@ -53,7 +53,7 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
               Compliance Evidence — Generated Automatically From Real Work
             </h1>
             <p className="text-xl lg:text-2xl text-white/90 mb-10 leading-relaxed font-normal max-w-3xl mx-auto">
-              AuditFlow turns operational activity into audit-ready proof in real time — so regulated teams pass audits without building compliance paperwork manually.
+              AuditFlow turns circular economy operations into audit-ready proof in real time — so teams pass compliance audits without building paperwork manually.
             </p>
             <p className="text-sm text-white/80 mb-12 font-normal">
               Built by Ambassador Elena Rao, systems cooperation architect and governance infrastructure specialist.
@@ -74,8 +74,8 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
       <section className="bg-gray-50 border-y border-gray-200 py-8">
         <div className="max-w-7xl mx-auto px-8 lg:px-12">
           <p className="text-center text-sm text-gray-600 font-normal">
-            Used by teams operating under:{' '}
-            <span className="font-semibold text-gray-900">ISO 13485 • FDA QMS • MDR • UKCA • GMP Frameworks</span>
+            Built for circular economy operations:{' '}
+            <span className="font-semibold text-gray-900">Waste Management • Resource Recovery • Circular Supply Chains • Sustainability Audits</span>
           </p>
         </div>
       </section>
@@ -88,16 +88,16 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
               Compliance Was Never Meant To Be Paperwork
             </h2>
             <p className="text-xl text-gray-600 mb-16 leading-relaxed font-normal">
-              Most regulated teams don't fail audits because they lack quality.
-              They fail because evidence is fragmented, manual, and reconstructed after the work is done.
+              Circular economy operations don't fail audits because they lack commitment to sustainability.
+              They fail because compliance evidence is fragmented, manual, and reconstructed after the work is done.
             </p>
             <div className="grid md:grid-cols-2 gap-4 text-left">
               {[
-                'Last-minute audit panic',
-                'Missing traceability events',
-                'High compliance staffing overhead',
-                'Production disruption during inspections',
-                'Hidden operational risk',
+                'Last-minute sustainability audit panic',
+                'Missing material traceability events',
+                'High compliance documentation overhead',
+                'Operations disruption during audits',
+                'Hidden circularity compliance risk',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 p-5 bg-gray-50 rounded-xl border border-gray-100">
                   <div className="w-2 h-2 rounded-full bg-red-500 mt-2 shrink-0"></div>
@@ -150,7 +150,7 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
                   'Who performed it',
                   'When it happened',
                   'Which procedure was used',
-                  'Which asset, batch, or device was involved',
+                  'Which material, batch, or resource was involved',
                 ],
                 note: 'No duplicate documentation.',
               },
@@ -163,7 +163,7 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
               {
                 number: '3',
                 title: 'Audit Packs Generated Instantly',
-                description: 'Select a batch, product line, or timeframe — export complete traceability instantly.',
+                description: 'Select a material batch, resource flow, or timeframe — export complete circularity traceability instantly.',
                 note: 'Weeks of prep → Hours.',
               },
               {
@@ -219,7 +219,7 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
               </div>
               <blockquote className="text-xl lg:text-2xl text-[#0a0a0a] font-medium mb-8 leading-relaxed">
                 "Cooperation only lasts when responsibility lasts as long as value lasts.
-                In regulated manufacturing, trust is built through traceability — not documents created after the fact."
+                In circular economy operations, trust is built through material traceability — not documents created after the fact."
               </blockquote>
               <div className="border-t border-gray-200 pt-8">
                 <p className="text-lg text-gray-600 mb-4 font-normal leading-relaxed">
@@ -244,10 +244,10 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
             <div className="grid md:grid-cols-2 gap-4 mb-16">
               {[
                 '40–70% reduction in manual compliance documentation time',
-                '30–50% faster audit preparation',
-                'Fewer audit findings linked to traceability gaps',
+                '30–50% faster sustainability audit preparation',
+                'Fewer audit findings linked to material traceability gaps',
                 'Reduced reliance on external compliance consultants',
-                'Less production disruption during inspections',
+                'Less operational disruption during circularity audits',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3 p-5 bg-emerald-50 border border-emerald-200 rounded-xl">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
@@ -288,9 +288,9 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
                   </p>
                   <ul className="space-y-3 mb-6">
                     {[
-                      'Why did the system flag this batch?',
-                      'How do I explain this to an auditor?',
-                      'What is the regulatory risk if we proceed?',
+                      'Why did the system flag this material batch?',
+                      'How do I explain this circularity metric to an auditor?',
+                      'What is the compliance risk if we proceed?',
                       'Why was this system designed this way?',
                     ].map((question, i) => (
                       <li key={i} className="flex items-start gap-3">
@@ -300,7 +300,7 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
                     ))}
                   </ul>
                   <p className="text-lg text-[#4f566b]">
-                    Elena provides calm, legally literate, systems-level explanations — grounded in real regulatory logic.
+                    Elena provides calm, legally literate, systems-level explanations — grounded in real circular economy compliance logic.
                   </p>
                 </div>
               </div>
@@ -316,10 +316,10 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
             <h2 className="text-4xl lg:text-5xl font-bold text-[#1a1f36] mb-12 text-center">Who This Is For</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                'Medical device manufacturers',
-                'Regulated production teams',
-                'Quality and regulatory leaders',
-                'Operations leaders responsible for audit outcomes',
+                'Circular economy operations',
+                'Waste management and resource recovery teams',
+                'Sustainability and compliance leaders',
+                'Operations leaders responsible for circularity audit outcomes',
               ].map((item, i) => (
                 <div key={i} className="p-6 bg-slate-50 border border-slate-200 rounded-lg text-center">
                   <p className="text-lg font-semibold text-[#1a1f36]">{item}</p>
@@ -344,7 +344,7 @@ const Landing: React.FC<LandingProps> = ({ onNavigateToDashboard }) => {
             </div>
             <div className="flex items-center gap-2">
               <ICONS.ShieldCheck />
-              <span className="font-semibold">Designed for regulated operational environments</span>
+              <span className="font-semibold">Designed for circular economy operational environments</span>
             </div>
           </div>
         </div>

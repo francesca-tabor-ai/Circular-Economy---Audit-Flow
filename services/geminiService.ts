@@ -21,9 +21,9 @@ export const analyzeAuditLogs = async (logs: EvidenceRecord[]) => {
   const ai = new GoogleGenAI({ apiKey });
   
   const prompt = `
-    Analyze the following compliance evidence records from a medical device production facility.
+    Analyze the following compliance evidence records from a circular economy operation.
     Provide a concise summary for an auditor highlighting:
-    1. Overall traceability health.
+    1. Overall material traceability health.
     2. Any potential gaps or anomalies in the timestamp sequences.
     3. Consistency of SOP versions used.
     
@@ -57,11 +57,11 @@ export const suggestMitigation = async (alertTitle: string, alertDesc: string) =
   try {
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
-      contents: `The following compliance alert was triggered in a medical device facility:
+      contents: `The following compliance alert was triggered in a circular economy operation:
         Title: ${alertTitle}
         Description: ${alertDesc}
         
-        Suggest 3 immediate corrective actions based on ISO 13485 standards. Keep it professional and direct.`,
+        Suggest 3 immediate corrective actions based on circular economy compliance standards. Keep it professional and direct.`,
       config: {
         responseMimeType: "application/json",
         responseSchema: {

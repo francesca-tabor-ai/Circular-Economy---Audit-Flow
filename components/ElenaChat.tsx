@@ -45,7 +45,7 @@ const ElenaChat: React.FC<ElenaChatProps> = ({ initialContext }) => {
       ],
       audit: [
         "How do I defend this pack to a regulator?",
-        "What's missing for a perfect FDA audit?",
+        "What's missing for a perfect circularity audit?",
         "Explain the chain of custody logic."
       ],
       alerts: [
