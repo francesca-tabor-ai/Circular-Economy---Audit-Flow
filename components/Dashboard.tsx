@@ -15,92 +15,100 @@ const data = [
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       {/* Stat Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { label: 'Evidence Captured', value: '14,291', trend: '+12%', color: 'text-[#635bff]', icon: ICONS.Evidence },
-          { label: 'Active Runs', value: '18', trend: 'Normal', color: 'text-emerald-600', icon: ICONS.Workflow },
-          { label: 'Gap Alerts', value: '3', trend: '-20%', color: 'text-amber-600', icon: ICONS.Alert },
-          { label: 'Readiness Score', value: '98.4%', trend: 'Optimized', color: 'text-indigo-600', icon: ICONS.ShieldCheck },
+          { label: 'Evidence Captured', value: '14,291', trend: '+12%', icon: ICONS.Evidence },
+          { label: 'Active Runs', value: '18', trend: 'Normal', icon: ICONS.Workflow },
+          { label: 'Gap Alerts', value: '3', trend: '-20%', icon: ICONS.Alert },
+          { label: 'Readiness Score', value: '98.4%', trend: 'Optimized', icon: ICONS.ShieldCheck },
         ].map((stat, i) => (
-          <div key={i} className="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_2px_4px_rgba(0,0,0,0.04)] hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between mb-4">
-              <div className={`p-1.5 rounded-md bg-slate-50 ${stat.color}`}>
+          <div 
+            key={i} 
+            className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm card-hover animate-in"
+            style={{ animationDelay: `${i * 50}ms` }}
+          >
+            <div className="flex items-center justify-between mb-6">
+              <div className="p-2 rounded-lg bg-gray-50 text-gray-700 transition-transform hover:scale-110">
                 <stat.icon />
               </div>
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.trend}</span>
+              <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">{stat.trend}</span>
             </div>
-            <p className="text-3xl font-bold text-[#1a1f36] tracking-tight">{stat.value}</p>
-            <p className="text-[13px] font-medium text-[#4f566b] mt-1">{stat.label}</p>
+            <p className="text-4xl font-bold text-[#0a0a0a] tracking-tight mb-2 mono">{stat.value}</p>
+            <p className="text-sm font-normal text-gray-600 leading-relaxed">{stat.label}</p>
           </div>
         ))}
       </div>
 
       {/* Main Stats Area */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 bg-white p-6 rounded-xl border border-slate-200 shadow-[0_2px_4px_rgba(0,0,0,0.04)]">
-          <div className="flex items-center justify-between mb-8">
+        <div className="lg:col-span-2 bg-white p-8 rounded-2xl border border-gray-200 shadow-sm card-hover animate-in fade-in">
+          <div className="flex items-center justify-between mb-10">
             <div>
-              <h3 className="text-lg font-bold text-[#1a1f36]">Evidence Capture History</h3>
-              <p className="text-sm text-slate-500">Real-time throughput across all production sites.</p>
+              <h3 className="text-xl font-bold text-[#0a0a0a] mb-2">Evidence Capture History</h3>
+              <p className="text-sm text-gray-600 font-normal">Real-time throughput across all production sites.</p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-semibold text-slate-400">View:</span>
-              <select className="text-xs font-bold border-slate-200 rounded-md py-1.5 px-3 bg-slate-50 outline-none focus:ring-2 focus:ring-[#635bff]/20">
+              <span className="text-xs font-medium text-gray-500">View:</span>
+              <select className="text-xs font-medium border-gray-200 rounded-lg py-2 px-3 bg-gray-50 outline-none focus:ring-2 focus:ring-gray-200 transition-smooth">
                 <option>Last 7 Days</option>
                 <option>Last 30 Days</option>
               </select>
             </div>
           </div>
-          <div className="h-72">
+          <div className="h-80">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data}>
                 <defs>
                   <linearGradient id="colorEv" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#635bff" stopOpacity={0.1}/>
-                    <stop offset="95%" stopColor="#635bff" stopOpacity={0}/>
+                    <stop offset="5%" stopColor="#60a5fa" stopOpacity={0.15}/>
+                    <stop offset="95%" stopColor="#60a5fa" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" stroke="#94a3b8" fontSize={11} tickLine={false} axisLine={false} dy={10} />
-                <YAxis stroke="#94a3b8" fontSize={11} tickLine={false} axisLine={false} dx={-10} />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f3f4f6" />
+                <XAxis dataKey="name" stroke="#9ca3af" fontSize={12} tickLine={false} axisLine={false} dy={10} />
+                <YAxis stroke="#9ca3af" fontSize={12} tickLine={false} axisLine={false} dx={-10} />
                 <Tooltip 
-                  contentStyle={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e2e8f0', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
-                  itemStyle={{ color: '#635bff', fontWeight: 600 }}
+                  contentStyle={{ backgroundColor: '#fff', borderRadius: '12px', border: '1px solid #e5e7eb', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }}
+                  itemStyle={{ color: '#1a1a1a', fontWeight: 500 }}
                 />
-                <Area type="monotone" dataKey="evidence" stroke="#635bff" fillOpacity={1} fill="url(#colorEv)" strokeWidth={3} />
+                <Area type="monotone" dataKey="evidence" stroke="#60a5fa" fillOpacity={1} fill="url(#colorEv)" strokeWidth={2.5} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-[0_2px_4px_rgba(0,0,0,0.04)] flex flex-col">
-          <h3 className="font-bold text-[#1a1f36] mb-6 text-sm flex items-center justify-between">
+        <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm flex flex-col card-hover animate-in fade-in">
+          <h3 className="font-bold text-[#0a0a0a] mb-8 text-base flex items-center justify-between">
             Compliance Gaps
-            <span className="text-[10px] px-2 py-0.5 bg-rose-50 text-rose-600 rounded-md font-bold uppercase tracking-wider">Action</span>
+            <span className="text-[10px] px-2.5 py-1 bg-rose-50 text-rose-600 rounded-lg font-semibold uppercase tracking-wider transition-transform hover:scale-105">Action</span>
           </h3>
-          <div className="space-y-3 flex-1">
+          <div className="space-y-4 flex-1">
             {[
               { site: 'Assembly Line A', risk: 'Medium', gap: 'Missing Operator Training (Exp. 2d)' },
               { site: 'Cleanroom Beta', risk: 'High', gap: 'Calibration Overdue: Sensor X-42' },
               { site: 'Sterilization Unit', risk: 'Low', gap: 'Signature Pending: Batch #8812' },
             ].map((hotspot, i) => (
-              <div key={i} className="p-4 bg-[#f8fafc] rounded-lg border border-slate-100 hover:border-slate-200 transition-colors">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-xs font-bold text-[#1a1f36]">{hotspot.site}</span>
-                  <span className={`text-[9px] px-1.5 py-0.5 rounded font-bold uppercase tracking-widest ${
+              <div 
+                key={i} 
+                className="p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all duration-200 cursor-pointer animate-in"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-xs font-semibold text-gray-900">{hotspot.site}</span>
+                  <span className={`text-[9px] px-2 py-0.5 rounded-lg font-semibold uppercase tracking-wider ${
                     hotspot.risk === 'High' ? 'bg-rose-100 text-rose-700' : 
                     hotspot.risk === 'Medium' ? 'bg-amber-100 text-amber-700' : 'bg-blue-100 text-blue-700'
                   }`}>
                     {hotspot.risk}
                   </span>
                 </div>
-                <p className="text-[12px] text-[#4f566b] leading-relaxed font-medium">{hotspot.gap}</p>
+                <p className="text-[12px] text-gray-600 leading-relaxed font-normal">{hotspot.gap}</p>
               </div>
             ))}
           </div>
-          <button className="w-full mt-6 py-2.5 text-xs font-bold text-[#635bff] hover:bg-[#635bff]/5 rounded-lg transition-all border border-[#635bff]/20">
+          <button className="w-full mt-8 py-3 text-xs font-semibold text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-xl transition-all duration-200 border border-gray-200 hover:border-gray-300 hover:shadow-sm active:scale-[0.98]">
             Audit All Gap Alerts
           </button>
         </div>
